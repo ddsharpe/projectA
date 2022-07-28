@@ -10,7 +10,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'node mycontent.js'
+                sh 'node src/mycontent.js'
             }
         }
     }
