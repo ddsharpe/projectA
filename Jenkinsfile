@@ -6,7 +6,7 @@ pipeline {
             agent {
                docker {
                     image 'node:latest'
-                    args '-u jenkins -v /var/run/docker.sock:/var/run/docker.sock'
+                    args '-u node -v /var/run/docker.sock:/var/run/docker.sock'
                 }
             }
             steps {
