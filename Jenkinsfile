@@ -16,9 +16,9 @@ pipeline {
                     cd downstream
                     git clone https://github.com/ddsharpe/projectB.git
                     cd ..
-                    node src/mycontent.js
                     cd downstream/projectB
                     git checkout -b from-projectA
+                    node ../../src/mycontent.js
                     git commit -m 'update from projectA'
                     git push origin
                 '''
