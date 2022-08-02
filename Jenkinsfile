@@ -15,7 +15,6 @@ pipeline {
                     cd downstream
                     git clone https://github.com/ddsharpe/projectB.git
                     cd ..
-                    // might be simpler to replace this javascript with sed/awk
                     node src/mycontent.js
                     cd downstream/projectB
                     git checkout -b from-projectA
