@@ -11,6 +11,7 @@ pipeline {
             }
             steps {
                 sh '''
+                    rm -rf downstream
                     mkdir downstream
                     cd downstream
                     git clone https://github.com/ddsharpe/projectB.git
