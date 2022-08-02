@@ -1,5 +1,5 @@
 // Load BOM file from downstream Project B
-bomFilename = './ProjectB/projectB/folder/bom.json';
+bomFilename = process.env.WORKSPACE + '/ProjectB/projectB/folder/bom.json';
 const jsonData=require(bomFilename);
 
 // locate data in BOM that needs to change
