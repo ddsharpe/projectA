@@ -2,7 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Fetch Downstream') {
+            steps {
+                sh '''
+                    mkdir ProjectB
+                    cd ProjectB
+                    git clone https://github.com/ddsharpe/projectB.git
+                '''
+            }
+        }
+        stage('Push') {
             agent {
                docker {
                     image 'node:latest'
