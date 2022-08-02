@@ -2,16 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Fetch Downstream') {
-            steps {
-                sh '''
-                    mkdir ProjectB
-                    cd ProjectB
-                    git clone https://github.com/ddsharpe/projectB.git
-                '''
-            }
-        }
-        stage('Push') {
+        stage('Downstream') {
             agent {
                docker {
                     image 'node:latest'
@@ -19,7 +10,18 @@ pipeline {
                 }
             }
             steps {
-                sh 'node src/mycontent.js'
+                sh '''
+                    mkdir downstream
+                    cd downstream
+                    git clone https://github.com/ddsharpe/projectB.git
+                    cd ..
+                    // might be simpler to replace this javascript with sed/awk
+                    node src/mycontent.js
+                    cd downstream/projectB
+                    git checkout -b from-projectA
+                    git commit -m 'update from projectA'
+                    git push origin
+                '''
             }
         }
     }
