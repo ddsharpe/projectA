@@ -23,13 +23,12 @@ pipeline {
                     node ../../src/mycontent.js
                     git add folder/bom.json
                     git commit -m 'update from projectA'
-                    git push --set-upstream origin from-projectA
                 '''
-               withCredentials([usernamePassword(credentialsId: 'DerekGitHub',
+                withCredentials([usernamePassword(credentialsId: 'DerekGitHub',
                                 usernameVariable: 'username',
                                 passwordVariable: 'password')]){
-                   sh("git push http://$username:$password@git.corp.mycompany.com/repo")
-               }
+                    sh("git push https://$username:$password@github.com/ddsharpe/projectB.git")
+                }
             }
         }
     }
