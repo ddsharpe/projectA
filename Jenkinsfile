@@ -10,6 +10,7 @@ pipeline {
                 }
             }
             steps {
+                withCredentials([gitUsernamePassword(credentialsId: 'DerekGitHub', gitToolName: 'git-tool')]) {
                 sh '''
                     git config --global user.email "you@example.com"
                     git config --global user.name "Your Name"
@@ -23,7 +24,9 @@ pipeline {
                     node ../../src/mycontent.js
                     git add folder/bom.json
                     git commit -m 'update from projectA'
+                    git push --set-upstream origin from-projectA
                 '''
+                }
                 withCredentials([usernamePassword(credentialsId: 'DerekGitHub',
                                 usernameVariable: 'username',
                                 passwordVariable: 'password')]){
