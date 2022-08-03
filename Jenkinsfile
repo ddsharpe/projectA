@@ -12,8 +12,8 @@ pipeline {
             steps {
                 withCredentials([gitUsernamePassword(credentialsId: 'ecnj_github', gitToolName: 'git-tool')]) {
                 sh '''
-                    git config --global user.email "you@example.com"
-                    git config --global user.name "Your Name"
+                    git config --global user.email "ecnj@oracle.com"
+                    git config --global user.name "ECNJ BOT"
                     rm -rf downstream
                     mkdir downstream
                     cd downstream
