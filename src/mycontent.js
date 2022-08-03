@@ -19,9 +19,8 @@ if (project !== undefined) {
 if (foundTag) {
     try {
         const fs=require('fs');
-        const { EOL } = require('os')
-        fs.writeFileSync(bomFilename, JSON.stringify(jsonData, null, 2))
-        fs.appendFileSync(bomFilename, EOL)
+        const data = `${JSON.stringify(jsonData, null, 2)}\n`
+        fs.writeFileSync(bomFilename, data)
     } catch (e) {
         console.error(e);
     }
