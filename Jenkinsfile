@@ -11,6 +11,8 @@ pipeline {
             }
             steps {
                 sh '''
+                    git config --global user.email "you@example.com"
+                    git config --global user.name "Your Name"
                     rm -rf downstream
                     mkdir downstream
                     cd downstream
@@ -22,6 +24,11 @@ pipeline {
                     git commit -m 'update from projectA'
                     git push origin
                 '''
+               withCredentials([usernamePassword(credentialsId: 'DerekGitHub',
+                                usernameVariable: 'username',
+                                passwordVariable: 'password')]){
+                   sh("git push http://$username:$password@git.corp.mycompany.com/repo")
+               }
             }
         }
     }
