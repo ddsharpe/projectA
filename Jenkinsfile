@@ -21,6 +21,7 @@ pipeline {
                     cd downstream/projectB
                     git checkout -b from-projectA
                     node ../../src/mycontent.js
+                    git add folder/bom.json
                     git commit -m 'update from projectA'
                     git push origin
                 '''
