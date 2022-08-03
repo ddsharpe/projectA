@@ -23,7 +23,7 @@ pipeline {
                     node ../../src/mycontent.js
                     git add folder/bom.json
                     git commit -m 'update from projectA'
-                    git push origin
+                    git push --set-upstream origin from-projectA
                 '''
                withCredentials([usernamePassword(credentialsId: 'DerekGitHub',
                                 usernameVariable: 'username',
