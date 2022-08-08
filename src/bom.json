@@ -1,0 +1,51 @@
+{
+  "registry": "ghcr.io",
+  "version": "1.0",
+  "components": [
+    {
+      "name": "platform",
+      "subcomponents": [
+        {
+          "repository": "xxxx",
+          "name": "component1",
+          "images": [
+            {
+              "image": "xxxx",
+              "tag": "xxxx"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "projectA",
+      "subcomponents": [
+        {
+          "repository": "xxxx",
+          "name": "projectA",
+          "images": [
+            {
+              "image": "yyyy",
+              "tag": "v1.0-yyyy"
+            },
+            {
+              "image": "zzzz",
+              "tag": "v1.0-zzzz"
+            }
+          ]
+        },
+        {
+          "registry": "docker.io",
+          "repository": "xxxx",
+          "name": "projectC",
+          "images": [
+            {
+              "image": "zzzz",
+              "tag": "v1.0-zzzz"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
