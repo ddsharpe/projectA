@@ -10,7 +10,7 @@ if (project !== undefined) {
     const subfolder = project['subcomponents'].find(element => element['name'] === "projectA")
     if (subfolder !== undefined) {
         const image = subfolder['images'].find(element => element['image'] === "yyyy")
-        image['tag'] = "v2.2-derek"
+        image['tag'] = "v2.3-derek"
         console.log(image)
         foundTag = true;
     }
@@ -28,16 +28,3 @@ if (foundTag) {
     console.error('Unable to locate BOM file in Project B')
     process.exit(1)
 }
-
-// const octokit = new Octokit({
-//     auth: 'personal-access-token123'
-// })
-//
-// await octokit.request('POST /repos/{owner}/{repo}/pulls', {
-//     owner: 'OWNER',
-//     repo: 'REPO',
-//     title: 'Pull request from ProjectA',
-//     body: 'ProjectA has been updated.  Update ProjectB to consume latest.',
-//     head: 'octocat:new-feature',
-//     base: 'main'
-// })
