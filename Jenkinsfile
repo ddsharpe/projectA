@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Call Downstream Job') {
-            when { changeSet "*" }
+            when { changeset "*" }
             steps {
                 build job: "derek/derek-test2/bfs%2Fv1", propagate: false
             }
