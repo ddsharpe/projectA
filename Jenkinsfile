@@ -10,7 +10,7 @@ pipeline {
                 }
             }
             steps {
-                build job: "derek-test2/no-slashes", propagate: false, parameters []
+                build job: "derek-test2/no-slashes", propagate: false
             }
         }
     }
