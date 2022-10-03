@@ -20,7 +20,7 @@ pipeline {
                     git clone https://github.com/ddsharpe/projectB.git
                     cd ..
                     cd downstream/projectB
-                    git checkout from-projectA || git checkout -b from-projectA
+                    git checkout from-projectA-release/v1 || git checkout -b from-projectA-release/v1
                     node ../../src/mycontent.js
                     git add folder/bom.json
                     git commit -m 'update from projectA'
