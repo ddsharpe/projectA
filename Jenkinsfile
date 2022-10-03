@@ -24,7 +24,7 @@ pipeline {
                     node ../../src/mycontent.js
                     git add folder/bom.json
                     git commit -m 'update from projectA'
-                    git push origin from-projectA
+                    git push origin
                 '''
                 }
             }
