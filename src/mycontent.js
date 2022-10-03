@@ -10,7 +10,7 @@ if (project !== undefined) {
     const subfolder = project['subcomponents'].find(element => element['name'] === "projectA")
     if (subfolder !== undefined) {
         const image = subfolder['images'].find(element => element['image'] === "yyyy")
-        image['tag'] = "v2.3.2-derek"
+        image['tag'] = "v2.3.3-derek"
         console.log(image)
         foundTag = true;
     }
